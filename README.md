@@ -38,8 +38,9 @@ Abra a pasta face_recognition_app no terminal do VS Code e siga os passos:
 
 Captura fotos do rosto e salva em dataset/.
 
+```
 python capture_images.py --name "SeuNome" --max 60
-
+```
 
 Parâmetros:
 
@@ -51,13 +52,17 @@ Parâmetros:
 
 Gera o arquivo trainer.yml com os dados do reconhecimento facial.
 
+```
 python train_recognizer.py
+```
 
 3. Reconhecimento em tempo real
 
 Abre a câmera e tenta identificar o rosto com base no modelo treinado.
 
+```
 python recognize_face.py
+```
 
 4. Quando o rosto do admin é reconhecido com sucesso, o sistema:
 
@@ -76,6 +81,8 @@ GET /clientes
 
 
 Retornando um JSON com os dados dos clientes autorizados.
+
+
 ## ⚖️ Nota ética
 
 O reconhecimento facial é uma tecnologia sensível, que pode trazer implicações de privacidade e segurança.
