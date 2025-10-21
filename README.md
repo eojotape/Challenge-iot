@@ -11,6 +11,7 @@ Este projeto demonstra o uso de **Visão Computacional** para:
 - Capturar imagens do rosto do usuário.
 - Treinar um modelo de reconhecimento facial.
 - Realizar a identificação em tempo real.
+- Efetuar autenticação automática do admin via API, gerando um token e listando clientes autenticados.
 
 A ideia de contexto é um **assessor de investimentos** que usa o rosto como **senha biométrica**, garantindo maior segurança no acesso a informações sensíveis.
 
@@ -18,7 +19,8 @@ A ideia de contexto é um **assessor de investimentos** que usa o rosto como **s
 
 
 ## 📹 Vídeo Demonstrativo
-Você pode assistir ao vídeo explicativo do projeto clicando [aqui](https://youtu.be/__NlMwX6fv4).
+🎥 Parte 1 — [Reconhecimento Facial Local](https://youtu.be/__NlMwX6fv4)  
+🎥 Parte 2 — [Integração com API e Autenticação](https://youtu.be/VodWsPuMoVE)
 
 ---
 ## ⚙️ Dependências
@@ -57,6 +59,23 @@ Abre a câmera e tenta identificar o rosto com base no modelo treinado.
 
 python recognize_face.py
 
+4. Quando o rosto do admin é reconhecido com sucesso, o sistema:
+
+Envia automaticamente uma requisição para a rota:
+
+POST /alt/login
+
+
+Com as credenciais do admin (armazenadas localmente).
+
+Recebe um Access Token da API.
+
+Usa esse token para fazer uma requisição autenticada para:
+
+GET /clientes
+
+
+Retornando um JSON com os dados dos clientes autorizados.
 ## ⚖️ Nota ética
 
 O reconhecimento facial é uma tecnologia sensível, que pode trazer implicações de privacidade e segurança.
@@ -74,7 +93,9 @@ Todas as imagens ficam salvas localmente na pasta dataset/.
 
 O modelo treinado fica no arquivo trainer.yml.
 
-O projeto não envia dados para a internet, roda apenas na máquina local.
+Nenhum dado facial é enviado para a internet.
+
+A integração com API apenas usa endpoints controlados e seguros.
 
 
 ---
